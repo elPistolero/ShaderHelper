@@ -37,7 +37,7 @@ GLint ShaderHelper::compileAndLinkShaders(const char* vertexShaderFile, const ch
         printf("vertex shader: compile error: ");
         printf("%s", vertexInfoLog);
         delete[] vertexInfoLog;
-        return;
+        return -1;
     }
 
     // compile the geometry shader
@@ -53,7 +53,7 @@ GLint ShaderHelper::compileAndLinkShaders(const char* vertexShaderFile, const ch
         printf("geometry shader: compile error: ");
         printf("%s", geomInfoLog);
         delete[] geomInfoLog;
-        return;
+        return -1;
     }
 
     // compile the fragment shader
@@ -69,7 +69,7 @@ GLint ShaderHelper::compileAndLinkShaders(const char* vertexShaderFile, const ch
         printf("fragment shader: compile error: ");
         printf("%s", fragInfoLog);
         delete[] fragInfoLog;
-        return;
+        return -1;
     }
 
     // attach and link the shaders to the program
@@ -87,9 +87,9 @@ GLint ShaderHelper::compileAndLinkShaders(const char* vertexShaderFile, const ch
         glGetProgramInfoLog(shader, maxLength, &maxLength,
                             infoLog);
         fprintf(stdout, "shader: link error: ");
-        printf("%s", splattingInfoLog);
-        delete[] splattingInfoLog;
-        return;
+        printf("%s", infoLog);
+        delete[] infoLog;
+        return -1;
     }
 
     return shader;
@@ -113,7 +113,7 @@ GLint ShaderHelper::compileAndLinkShaders(const char* vertexShaderFile, const ch
         printf("vertex shader: compile error: ");
         printf("%s", vertexInfoLog);
         delete[] vertexInfoLog;
-        return;
+        return -1;
     }
 
     // compile the fragment shader
@@ -129,7 +129,7 @@ GLint ShaderHelper::compileAndLinkShaders(const char* vertexShaderFile, const ch
         printf("fragment shader: compile error: ");
         printf("%s", fragInfoLog);
         delete[] fragInfoLog;
-        return;
+        return -1;
     }
 
     // attach and link the shaders to the program
@@ -146,9 +146,9 @@ GLint ShaderHelper::compileAndLinkShaders(const char* vertexShaderFile, const ch
         glGetProgramInfoLog(shader, maxLength, &maxLength,
                             infoLog);
         fprintf(stdout, "shader: link error: ");
-        printf("%s", splattingInfoLog);
-        delete[] splattingInfoLog;
-        return;
+        printf("%s", infoLog);
+        delete[] infoLog;
+        return -1;
     }
 
     return shader;

@@ -1,5 +1,9 @@
+#ifndef SHADERHELPER_H
+#define SHADERHELPER_H
+
 #include <fstream>
 #include <GL/glew.h>
+#include <GL/gl.h>
 
 using std::ifstream;
 
@@ -11,3 +15,5 @@ class ShaderHelper {
     private:
         char* readShaderFromFile(const char* fileName);
 };
+
+#endif
