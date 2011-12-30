@@ -2,8 +2,7 @@
 #define SHADERHELPER_H
 
 #include <fstream>
-#include <GL/glew.h>
-#include <GL/gl.h>
+#include "SDL/SDL_opengl.h"
 
 using std::ifstream;
 
